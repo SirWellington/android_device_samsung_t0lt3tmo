@@ -24,23 +24,29 @@ mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb root
 sleep 3
 
-#adb pull /system/bin/gpsd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/gpsd
+adb pull /system/bin/qcks ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/qcks
 adb pull /system/bin/rild ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/rild
+adb pull /system/bin/sec-ril ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/sec-ril
 adb pull /system/bin/sensorservice ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/sensorservice
 adb pull /system/bin/sensorhubservice ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/sensorhubservice
+
+adb pull /system/etc/gps.conf ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/gps.conf
+
 adb pull /system/lib/hw/gps.default.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/gps.default.so
 adb pull /system/lib/hw/camera.smdk4x12.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/camera.smdk4x12.so
 adb pull /system/lib/hw/sensors.smdk4x12.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/sensors.smdk4x12.so
 adb pull /system/lib/hw/sensorhubs.smdk4x12.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/sensorhubs.smdk4x12.so
+
 adb pull /system/lib/libakm.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libakm.so
 adb pull /system/lib/libril.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libril.so
 adb pull /system/lib/libsecril-client.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libsecril-client.so
-adb pull /system/lib/libril-qc-qmi-1.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libril-qc-qmi-1.so #Was referenced in stock rom under ro.ril.arguments
+adb pull /system/lib/libril-qc-qmi-1.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libril-qc-qmi-1.so
 adb pull /system/lib/libsensorservice.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libsensorservice.so
 adb pull /system/lib/libsensorhubservice.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libsensorhubservice.so
+
 adb pull /system/usr/idc/sec_e-pen.idc ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/usr/idc/sec_e-pen.idc
 adb pull /system/usr/keylayout/sec_e-pen.kl ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/usr/keylayout/sec_e-pen.kl
-#adb pull /system/usr/keylayout/sec_touchkey.kl ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/usr/keylayout/sec_touchkey.kl
+
 adb pull /system/vendor/firmware/libpn544_fw.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/vendor/firmware/libpn544_fw.so
 adb pull /system/vendor/firmware/fimc_is_fw.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/vendor/firmware/fimc_is_fw.bin
 adb pull /system/vendor/firmware/mfc_fw.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/vendor/firmware/mfc_fw.bin
@@ -64,10 +70,14 @@ adb pull /system/vendor/firmware/mfc_fw.bin ../../../vendor/$MANUFACTURER/$DEVIC
 LOCAL_PATH := vendor/samsung/t0ltetmo
 
 PRODUCT_COPY_FILES += \\
-    #\$(LOCAL_PATH)/proprietary/system/bin/gpsd:system/bin/gpsd \\
-    \$(LOCAL_PATH)/proprietary/system/bin/sensorservice:system/bin/sensorservice \\
+    \$(LOCAL_PATH)/proprietary/system/bin/qcks:system/bin/qcks \\
+    \$(LOCAL_PATH)/proprietary/system/bin/rild:system/bin/rild \\
+    \$(LOCAL_PATH)/proprietary/system/bin/sec-ril:system/bin/sec-ril \\
     \$(LOCAL_PATH)/proprietary/system/bin/sensorhubservice:system/bin/sensorhubservice \\
-    \$(LOCAL_PATH)/proprietary/system/bin/rild:system/bin/rild
+    \$(LOCAL_PATH)/proprietary/system/bin/sensorservice:system/bin/sensorservice \\
+
+PRODUCT_COPY_FILES += \\
+    \$(LOCAL_PATH)/proprietary/system/etc/gps.conf:system/etc/gps.conf \\
 
 PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/proprietary/system/lib/libakm.so:system/lib/libakm.so \\
@@ -87,8 +97,7 @@ PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/proprietary/system/usr/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc
 
 PRODUCT_COPY_FILES += \\
-    \$(LOCAL_PATH)/proprietary/system/usr/keylayout/sec_e-pen.kl:system/usr/keylayout/sec_e-pen.kl \\
-    #\$(LOCAL_PATH)/proprietary/system/usr/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
+    \$(LOCAL_PATH)/proprietary/system/usr/keylayout/sec_e-pen.kl:system/usr/keylayout/sec_e-pen.kl
 
 PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/proprietary/system/vendor/firmware/libpn544_fw.so:system/vendor/firmware/libpn544_fw.so \\

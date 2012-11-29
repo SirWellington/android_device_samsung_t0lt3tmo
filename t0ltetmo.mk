@@ -52,7 +52,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     GalaxyNote2Settings \
     libsecril-client \
-    libsecril-client-sap \
     libril-qc-qmi-1.so \
     SamsungServiceMode
 
