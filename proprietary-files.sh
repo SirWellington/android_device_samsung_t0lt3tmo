@@ -24,23 +24,62 @@ mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb root
 sleep 3
 
-adb pull /system/bin/qcks ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/qcks
+adb pull /system/bin/diag_uart_log ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/diag_uart_log
+adb pull /system/bin/efsks ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/efsks
+adb pull /system/bin/gsiff_daemon ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/gsiff_daemon
+adb pull /system/bin/ks ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/ks
+adb pull /system/bin/netmgrd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/netmgrd
 adb pull /system/bin/rild ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/rild
+adb pull /system/bin/qcks ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/qcks
+adb pull /system/bin/qmiproxy ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/qmiproxy
+adb pull /system/bin/qmuxd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/qmuxd
 adb pull /system/bin/sec-ril ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/sec-ril
+adb pull /system/bin/secstarter ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/secstarter
 adb pull /system/bin/sensorservice ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/sensorservice
 adb pull /system/bin/sensorhubservice ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/sensorhubservice
 
+#GPS
 adb pull /system/etc/gps.conf ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/etc/gps.conf
 
+#Hardware-specific libraries.
+adb pull /system/lib/hw/audio_policy.smdk4x12.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/audio_policy.smdk4x12.so
+adb pull /system/lib/hw/audio.primary.smdk4x12.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/audio.primary.smdk4x12.so
 adb pull /system/lib/hw/gps.default.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/gps.default.so
 adb pull /system/lib/hw/camera.smdk4x12.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/camera.smdk4x12.so
 adb pull /system/lib/hw/sensors.smdk4x12.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/sensors.smdk4x12.so
 adb pull /system/lib/hw/sensorhubs.smdk4x12.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/hw/sensorhubs.smdk4x12.so
 
-adb pull /system/lib/libakm.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libakm.so
+#Radio Interface Layer libraries mostly from Qualcolmm.
+adb pull /system/lib/libdsi_netctrl.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libdsi_netctrl.so
+adb pull /system/lib/libnetmgr.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libnetmgr.so
 adb pull /system/lib/libril.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libril.so
-adb pull /system/lib/libsecril-client.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libsecril-client.so
 adb pull /system/lib/libril-qc-qmi-1.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libril-qc-qmi-1.so
+adb pull /system/lib/libril-qcril-hook-oem.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libril-qcril-hook-oem.so
+adb pull /system/lib/libqdp.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqdp.so
+adb pull /system/lib/libqdi.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqdi.so
+adb pull /system/lib/libqmi.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqmi.so
+adb pull /system/lib/libqmi_cci.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqmi_cci.so
+adb pull /system/lib/libqmi_csi.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqmi_csi.so
+adb pull /system/lib/libqmi_common_so.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqmi_common_so.so
+adb pull /system/lib/libqmi_client_qmux.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqmi_client_qmux.so
+adb pull /system/lib/libqmi_encdec.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqmi_encdec.so
+adb pull /system/lib/libqcci_legacy.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqcci_legacy.so
+adb pull /system/lib/libqmiservices.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libqmiservices.so
+adb pull /system/lib/libsecril-client.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libsecril-client.so
+#End RIL libs
+adb pull /system/lib/libakm.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libakm.so
+adb pull /system/lib/libaudio-ril.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libaudio-ril.so
+adb pull /system/lib/libaudiopolicy_sec.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libaudiopolicy_sec.so
+adb pull /system/lib/libcsd-client.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libcsd-client.so
+adb pull /system/lib/libdiag.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libdiag.so
+adb pull /system/lib/libdsutils.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libdsutils.so
+adb pull /system/lib/libgps.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libgps.so
+adb pull /system/lib/libgps.utils.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libgps.utils.so
+adb pull /system/lib/libidl.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libidl.so
+adb pull /system/lib/libloc_api_v02.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libloc_api_v02.so
+adb pull /system/lib/libloc_adapter.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libloc_adapter.so
+adb pull /system/lib/libloc_eng.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libloc_eng.so
+adb pull /system/lib/libssaudio-client.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libssaudio-client.so
 adb pull /system/lib/libsensorservice.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libsensorservice.so
 adb pull /system/lib/libsensorhubservice.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/lib/libsensorhubservice.so
 
@@ -70,24 +109,59 @@ adb pull /system/vendor/firmware/mfc_fw.bin ../../../vendor/$MANUFACTURER/$DEVIC
 LOCAL_PATH := vendor/samsung/t0ltetmo
 
 PRODUCT_COPY_FILES += \\
-    \$(LOCAL_PATH)/proprietary/system/bin/qcks:system/bin/qcks \\
+    \$(LOCAL_PATH)/proprietary/system/bin/diag_uart_log:system/bin/diag_uart_log \\
+    \$(LOCAL_PATH)/proprietary/system/bin/efsks:system/bin/efsks \\
+    \$(LOCAL_PATH)/proprietary/system/bin/gsiff_daemon:system/bin/gsiff_daemon \\
+    \$(LOCAL_PATH)/proprietary/system/bin/ks:system/bin/ks \\
+    \$(LOCAL_PATH)/proprietary/system/bin/netmgrd:system/bin/netmgrd \\
     \$(LOCAL_PATH)/proprietary/system/bin/rild:system/bin/rild \\
+    \$(LOCAL_PATH)/proprietary/system/bin/qcks:system/bin/qcks \\
+    \$(LOCAL_PATH)/proprietary/system/bin/qmiproxy:system/bin/qmiproxy \\
+    \$(LOCAL_PATH)/proprietary/system/bin/qmuxd:system/bin/qmuxd \\
     \$(LOCAL_PATH)/proprietary/system/bin/sec-ril:system/bin/sec-ril \\
-    \$(LOCAL_PATH)/proprietary/system/bin/sensorhubservice:system/bin/sensorhubservice \\
+    \$(LOCAL_PATH)/proprietary/system/bin/secstarter:system/bin/secstarter \\
     \$(LOCAL_PATH)/proprietary/system/bin/sensorservice:system/bin/sensorservice \\
+    \$(LOCAL_PATH)/proprietary/system/bin/sensorhubservice:system/bin/sensorhubservice
 
 PRODUCT_COPY_FILES += \\
-    \$(LOCAL_PATH)/proprietary/system/etc/gps.conf:system/etc/gps.conf \\
+    \$(LOCAL_PATH)/proprietary/system/etc/gps.conf:system/etc/gps.conf
 
 PRODUCT_COPY_FILES += \\
-    \$(LOCAL_PATH)/proprietary/system/lib/libakm.so:system/lib/libakm.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libaudiopolicy_sec.so:system/lib/libaudiopolicy_sec.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libdsi_netctrl.so:system/lib/libdsi_netctrl.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libnetmgr.so:system/lib/libnetmgr.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libril.so:system/lib/libril.so \\
-    \$(LOCAL_PATH)/proprietary/system/lib/libsecril-client.so:system/lib/libsecril-client.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libril-qc-qmi-1.so:system/lib/libril-qc-qmi-1.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libqdp.so:system/lib/libqdp.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libqdi.so:system/lib/libqdi.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libqmi.so:system/lib/libqmi.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libqmi_cci.so:system/lib/libqmi_cci.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libqmi_csi.so:system/lib/libqmi_csi.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libqmi_common_so.so:system/lib/libqmi_common_so.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libqmi_client_qmux.so:system/lib/libqmi_client_qmux.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libqmi_encdec.so:system/lib/libqmi_encdec.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libqcci_legacy.so:system/lib/libqcci_legacy.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libqmiservices.so:system/lib/libqmiservices.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libsecril-client.so:system/lib/libsecril-client.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libakm.so:system/lib/libakm.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libaudio-ril.so:system/lib/libaudio-ril.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libcsd-client.so:system/lib/libcsd-client.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libdiag.so:system/lib/libdiag.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libdsutils.so:system/lib/libdsutils.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libgps.so:system/lib/libgps.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libgps.utils.so:system/lib/libgps.utils.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libidl.so:system/lib/libidl.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libloc_api_v02.so:system/lib/libloc_api_v02.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libloc_adapter.so:system/lib/libloc_adapter.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libloc_eng.so:system/lib/libloc_eng.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/libssaudio-client.so:system/lib/libssaudio-client.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libsensorservice.so:system/lib/libsensorservice.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/libsensorhubservice.so:system/lib/libsensorhubservice.so
 
 PRODUCT_COPY_FILES += \\
+    \$(LOCAL_PATH)/proprietary/system/lib/hw/audio_policy.smdk4x12.so:system/lib/hw/audio_policy.smdk4x12.so \\
+    \$(LOCAL_PATH)/proprietary/system/lib/hw/audio.primary.smdk4x12.so:system/lib/hw/audio.primary.smdk4x12.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/hw/gps.default.so:system/lib/hw/gps.default.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/hw/camera.smdk4x12.so:system/lib/hw/camera.smdk4x12.so \\
     \$(LOCAL_PATH)/proprietary/system/lib/hw/sensors.smdk4x12.so:system/lib/hw/sensors.smdk4x12.so \\
