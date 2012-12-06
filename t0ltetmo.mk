@@ -36,7 +36,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc \
     $(LOCAL_PATH)/init.usb.rc:root/init.usb.rc \
-    $(LOCAL_PATH)/init.bt.rc:root/init.bt.rc
+    $(LOCAL_PATH)/init.bt.rc:root/init.bt.rc \
+    $(LOCAL_PATH)/init.bt.rc:root/init.rc \
 
 # Audio
 PRODUCT_COPY_FILES += \
