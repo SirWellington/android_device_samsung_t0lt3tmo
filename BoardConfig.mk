@@ -25,7 +25,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
 TARGET_KERNEL_CONFIG := cyanogenmod_t0ltetmo_defconfig
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := t03g,t0ltetmo,SGH-T889
+TARGET_OTA_ASSERT_DEVICE := t0tmo,t0ltetmo,SGH-T889
 
 # inherit from the proprietary version
 -include vendor/samsung/t0ltetmo/BoardConfigVendor.mk

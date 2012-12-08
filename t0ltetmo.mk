@@ -37,7 +37,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc \
     $(LOCAL_PATH)/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/init.bt.rc:root/init.bt.rc \
-    $(LOCAL_PATH)/init.bt.rc:root/init.rc \
+    $(LOCAL_PATH)/init.carrier.rc:root/init.carrier.rc \
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     GalaxyNote2Settings \
     libsecril-client \
-    libril-qc-qmi-1 \
+    libsecril-client-sap \
     SamsungServiceMode
 
 # NFC
@@ -88,13 +88,19 @@ $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=Smdk4210RIL \
-    mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
     ro.ril.hsdpa.category=10 \
     ro.ril.gprsclass=10 \
     ro.ril.enable.amr.wideband=1 \
     ro.ril.hsupa.category=5 \
-    ro.ril.hsxpa=2
+    ro.ril.hsxpa=2 \
+    ro.ril.hep=1 \
+    ro.ril.enable.dtm=1 \
+    ro.ril.hsdpa.category=10 \
+    ro.ril.enable.a53=1 \
+    ro.ril.enable.3g.prefix=1 \
+    ro.ril.htcmaskw1.bitmask=4294967295 \
+    ro.ril.htcmaskw1=14449 \
+    ro.ril.hsupa.category=5
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \

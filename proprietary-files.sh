@@ -24,6 +24,8 @@ mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb root
 sleep 3
 
+adb pull /data/cfw/SlimISP_ZK.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/vendor/firmware/SlimISP_ZK.bin
+
 adb pull /system/bin/diag_uart_log ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/diag_uart_log
 adb pull /system/bin/efsks ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/efsks
 adb pull /system/bin/gsiff_daemon ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/system/bin/gsiff_daemon
@@ -176,6 +178,7 @@ PRODUCT_COPY_FILES += \\
 PRODUCT_COPY_FILES += \\
     \$(LOCAL_PATH)/proprietary/system/vendor/firmware/libpn544_fw.so:system/vendor/firmware/libpn544_fw.so \\
     \$(LOCAL_PATH)/proprietary/system/vendor/firmware/fimc_is_fw.bin:system/vendor/firmware/fimc_is_fw.bin \\
+    \$(LOCAL_PATH)/proprietary/system/vendor/firmware/SlimISP_ZK.bin:system/vendor/firmware/SlimISP_ZK.bin \\
     \$(LOCAL_PATH)/proprietary/system/vendor/firmware/mfc_fw.bin:system/vendor/firmware/mfc_fw.bin
 
 EOF
